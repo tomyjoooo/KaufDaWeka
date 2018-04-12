@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	
+	<!-- Chart.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+    <title>KaufDort</title>
+	
+  </head>
+  <body>
+	
+	<div class="container" style="margin-top:50px">
+		<form>
+			<div class="form-group">
+				<label>Auszuwertenden Datensatz auswählen (.csv-Datei)</label>
+				<input type="file" class="form-control-file">
+			</div>
+			<button type="button" class="btn btn-primary">Auswertung</button>
+		</form>
+		<div class="progress" style="margin-top:25px; width:400px; height:25px;">
+			<div class="progress-bar progress-bar-striped w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+		</div>
+	</div>
+	
+	<div class="container-fluid" style="margin-top:100px; width:90%;">
+		<div class="card-deck">
+		
+			<div class="card">
+				<h3 class="card-header">Verkaufte Artikel pro Wochentag</h3>
+				<div class="card-body">
+					<canvas id="card1"></canvas>
+				</div>
+			</div>
+			
+			<div class="card">
+				<h3 class="card-header">Verkaufte Artikel</h3>
+				<div class="card-body">
+					<canvas id="card2"></canvas>
+				</div>
+			</div>
+			
+		</div>
+		<div class="card-deck"style="margin-top:30px;">
+		
+			<div class="card">
+				<h3 class="card-header">Verkaufte Artikel nach Geschlecht</h3>
+				<div class="card-body">
+					<canvas id="card3"></canvas>
+				</div>
+			</div>
+			
+			<div class="card">
+				<h3 class="card-header">Diagramm 4</h3>
+				<div class="card-body">
+					Hier kommt ein Diagramm hin
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div style="margin:100px;"></div>
+	
+	<script>
+	Chart.defaults.global.defaultFontSize = 20;
+	var chart1 = document.getElementById('card1');
+	var barChart1 = new Chart(chart1, {
+		type: 'bar',
+		data: {
+			labels: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
+			datasets: [{
+				label: "Verkaufte Artikel",
+				backgroundColor: 'rgba(255, 150, 20)',
+				data: [43, 35, 38, 32, 39, 48],
+			}]
+		},
+		options: {
+			legend: {
+				display: false
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	});
+
+	var chart2 = document.getElementById('card2');
+	var pieChart1 = new Chart(chart2, {
+		type: 'pie',
+		data: {
+			labels: ["Getränke", "Obst", "Fleisch", "Gemüse", "Drogerieartikel", "Milchprodukte", "Spirituosen", "Backwaren"],
+			datasets: [{
+				label: "Verkaufte Artikel",
+				backgroundColor: [
+					'rgba(255, 200, 20)',
+					'rgba(255, 100, 20)',
+					'rgba(50, 250, 200)',
+					'rgba(50, 250, 100)',
+					'rgba(5, 100, 255)',
+					'rgba(5, 100, 160)',
+					'rgba(160, 155, 200)',
+					'rgba(250, 20, 15)'
+				],
+				data: [103, 89, 78, 82, 65, 74, 31, 62]
+			}]
+		},
+		options: {
+			legend: {
+				position: 'right'
+			}
+		}
+	});
+	
+	var chart3 = document.getElementById('card3');
+	var barChart2 = new Chart(chart3, {
+		type: 'bar',
+		data: {
+			labels: ["Fleisch", "Gemüse", "Spirituosen", "Drogerieartikel"],
+			datasets: [{
+				label: "Männer",
+				backgroundColor: 'rgba(25,25,255)',
+				data: [34, 23, 19, 13]
+			}, {
+				label: "Frauen",
+				backgroundColor: 'rgba(255,25,25)',
+				data: [18, 33, 12, 29]
+			}]
+		},
+		options: {
+			scales: {
+				xAxes: [{
+					stacked: true
+				}],
+				yAxes: [{
+					stacked: true,
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	});	
+	</script>
+		
+  </body>
+</html>
