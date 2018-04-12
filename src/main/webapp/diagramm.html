@@ -10,11 +10,31 @@
 	
 	<!-- Chart.js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-
+	<script src="js/jquery-3.0.0.min.js"></script>
     <title>KaufDort</title>
 	
   </head>
-  <body>
+  <body> 
+  <button id ="btnTest">Request TEST</button>
+	<script>
+		$(document).ready(function(){
+			//Button nur zu testzwecken!
+			//Später muss dies über das Dropdown gesteuert werden
+			$("#btnTest").click(function(){
+				//Get Anfrage an Servlet Moin!!
+				//In Data gibt es dann die JSON Daten,
+				//damit muss dann gearbeitet werden in den Diagrammen!!!
+				// Mit Henning klären wie er die Servlets gestaltet
+				$.get("http://localhost:8080/KaufDaTest/Moin",function(data){
+					document.getElementById("testId").innerHTML = data;
+				});
+				
+				//Beim CSV Hochladen muss dann ein POST gemacht werde  und kein get
+			});
+		});
+	</script>
+	<h3> Hier drunter stehen dann die Daten vom Servlet: </h3>
+	<p id="testId"></p>
 	
 	<div class="container" style="margin-top:50px">
 		<form>
