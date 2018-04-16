@@ -31,14 +31,14 @@ public class Moin extends HttpServlet {
 		// Die folgende INstanzierung ist ausgedacht!
 		// PAtrick fragen wie der das vor hat
 		//Weka weka = new Weka();
-		String[] kennzeichen = request.getParameterValues("Kennzeichen");
-		String rueckgabe = "";
-		if (kennzeichen[0]=="top5tage") {
+		//String[] kennzeichen = request.getParameterValues("Kennzeichen");
+		String rueckgabe = "moin";
+		/*if (kennzeichen[0]=="top5tage") {
 			//funktionsnamen hab ich mir auch erst mal ausgedacht
 			//rueckgabe = weka.top5tage();
 		}else if(kennzeichen[0]=="top5uhrzeiten"){
 			//rueckgabe = weka.toptuhrzeiten();
-		}
+		}*/
 		out.append(rueckgabe);
 	}
 
