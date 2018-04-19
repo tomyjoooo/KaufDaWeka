@@ -14,7 +14,6 @@ public class Daten implements Comparable<Daten>{
 		wert = w;
 	}
 	
-	@Override
 	public int compareTo(Daten other) {
 	       if(wert < other.wert) return -1;
 	       if(wert > other.wert) return 1;
