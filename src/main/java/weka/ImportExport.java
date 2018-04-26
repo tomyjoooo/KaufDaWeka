@@ -17,8 +17,8 @@ public class ImportExport {
 	
 	public Instances loadCSV() throws IOException {
 		// Eigenen Dateipfad eintragen, nicht meinen nehmen ;-)
-		String path = "C:/Users/User1/Documents/Studiengänge/Semester4/SPM/";
-		String roh = path + "kd.csv";
+		String path = "D:/Drive/Uni/Semester 4 Tom/SPM/Projekt/";
+		String roh = path + "kd_klein.csv";
 		//String arffDat = path + "kd.arff";
 		//String dateiMod = path + "kd.model.txt";
 		Instances alleDaten;

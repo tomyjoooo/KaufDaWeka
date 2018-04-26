@@ -33,12 +33,12 @@
 			});
 		});
 	</script>
-	<button id ="btnTest">Auswertungen TEST</button>
+	<button id ="btnTest2">Auswertungen TEST</button>
 	<script>
 		$(document).ready(function(){
-			$("#btnTest").click(function(){
+			$("#btnTest2").click(function(){
 				
-				$.get("http://localhost:8080/KaufDaTest/Auswertungen?Kennzeichen=Top5KundenTag",function(data){
+				$.get("http://localhost:8080/KaufDaTest/Auswertungen?Kennzeichen=Top5KundenZeit",function(data){
 					document.getElementById("testId").innerHTML = data;
 				});
 			});
