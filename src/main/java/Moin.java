@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Moin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private int i = 0;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,14 +34,15 @@ public class Moin extends HttpServlet {
 		// PAtrick fragen wie der das vor hat
 		//Weka weka = new Weka();
 		//String[] kennzeichen = request.getParameterValues("Kennzeichen");
-		String rueckgabe = "moin";
+		String rueckgabe = "moin ";
 		/*if (kennzeichen[0]=="top5tage") {
 			//funktionsnamen hab ich mir auch erst mal ausgedacht
 			//rueckgabe = weka.top5tage();
 		}else if(kennzeichen[0]=="top5uhrzeiten"){
 			//rueckgabe = weka.toptuhrzeiten();
 		}*/
-		out.append(rueckgabe);
+		i++;
+		out.append(rueckgabe + i);
 	}
 
 	/**
