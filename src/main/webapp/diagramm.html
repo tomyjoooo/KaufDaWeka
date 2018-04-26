@@ -33,6 +33,17 @@
 			});
 		});
 	</script>
+	<button id ="btnTest">Auswertungen TEST</button>
+	<script>
+		$(document).ready(function(){
+			$("#btnTest").click(function(){
+				
+				$.get("http://localhost:8080/KaufDaTest/Auswertungen?Kennzeichen=Top5KundenTag",function(data){
+					document.getElementById("testId").innerHTML = data;
+				});
+			});
+		});
+	</script>
 	<h3> Hier drunter stehen dann die Daten vom Servlet: </h3>
 	<p id="testId"></p>
 	
