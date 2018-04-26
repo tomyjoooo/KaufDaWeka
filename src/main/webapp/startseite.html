@@ -19,7 +19,7 @@
 	<div class="jumbotron jumbotron-fluid bg-primary" style="color:white;">
 		<div class="container">
 			<h1 class="display-4">Startseite</h1>
-			<p class="lead">Das hier ist die Startseite</p>
+			<p class="lead px-2">Das hier ist die Startseite</p>
 		</div>
 	</div>
 		
@@ -30,13 +30,13 @@
              
 				<ul class="nav flex-column nav-pills">
 					<li class="nav-item">
-						<a class="navbar-brand text-center" href="startseite.html"><h4>KaufDort</h4></a>
+						<a class="navbar-brand text-dark" href="startseite.html"><h3>KaufDort</h3></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link active" href="startseite.html">Startseite</a>
 					</li>
 					<li class="nav-item mt-2 px-2">
-						Top 5-Kunden
+						<strong>Top 5-Kunden</strong>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="top5kundenwochentag.html">nach Wochentag</a>
@@ -48,7 +48,7 @@
 						<a class="nav-link" href="top5kundenalter.html">nach Altersgruppe</a>
 					</li>
 					<li class="nav-item mt-2 px-2">
-						Top 5-Artikel
+						<strong>Top 5-Artikel</strong>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="top5artikel.html">nach Wochentag</a>
@@ -82,24 +82,22 @@
 				<div class="container pt-3 border-top border-primary">
 					<h5>Vorherige Auswertungen anschauen:</h5>
 					
-					<pre class="text-muted mb-0">neueste             älteste</pre>
-					
-					<div class="btn-group btn-group-toggle" data-toggle="buttons">
-					  <label class="btn btn-primary active btn-lg">
-						<input type="radio" name="options" id="option1" autocomplete="off" checked> 1
-					  </label>
-					  <label class="btn btn-primary btn-lg">
-						<input type="radio" name="options" id="option2" autocomplete="off"> 2
-					  </label>
-					  <label class="btn btn-primary btn-lg">
-						<input type="radio" name="options" id="option3" autocomplete="off"> 3
-					  </label>
-					  <label class="btn btn-primary btn-lg">
-						<input type="radio" name="options" id="option4" autocomplete="off"> 4
-					  </label>
-					  <label class="btn btn-primary btn-lg">
-						<input type="radio" name="options" id="option5" autocomplete="off"> 5
-					  </label>
+					<div class="btn-group btn-group-toggle mt-2" data-toggle="buttons">
+						<label class="btn btn-primary active btn-lg">
+							<input type="radio" name="options" id="option1" autocomplete="off" checked> 1
+						</label>
+						<label class="btn btn-primary btn-lg">
+							<input type="radio" name="options" id="option2" autocomplete="off"> 2
+						</label>
+						<label class="btn btn-primary btn-lg">
+							<input type="radio" name="options" id="option3" autocomplete="off"> 3
+						</label>
+						<label class="btn btn-primary btn-lg">
+							<input type="radio" name="options" id="option4" autocomplete="off"> 4
+						</label>
+						<label class="btn btn-primary btn-lg">
+							<input type="radio" name="options" id="option5" autocomplete="off"> 5
+						</label>
 					</div>
 				</div>
 				
@@ -108,17 +106,9 @@
 		
 	</div>
 			
-	<div style="margin:100px;"></div>
-	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-	<script src="js/bootstrap.min.js"</script>
-		
-	<script>
-		$(document).ready(function() {
-			$(".dropdown-toggle").dropdown();
-		});
-	</script>
+	<script src="js/bootstrap.min.js"></script>
 		
   </body>
 </html>
