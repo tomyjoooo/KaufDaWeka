@@ -64,6 +64,35 @@ public class Top5 {
 		
 	}	
 	
+	public String toString() {
+		String returnString;
+		
+		
+		returnString = "[";
+		for(int i = 0; i < top5.size();i++) {
+			returnString += '"' + top5.get(i).getInhalt() + '"'; 
+			
+			if(i < top5.size()-1) {
+				returnString += ",";
+			}else {
+				returnString += "]";
+			}
+		}
+		
+		returnString += "|[";
+		
+		for(int i = 0; i < top5.size();i++) {
+			returnString += top5.get(i).getWert(); 
+			
+			if(i < top5.size()-1) {
+				returnString += ",";
+			}else {
+				returnString += "]";
+			}
+		}
+	
+		return returnString;
+	}
 	
 	public void reset() {
 		top5.clear();
