@@ -1,8 +1,6 @@
-package net.codejava.upload;
-
 //MUSS NOCH ÜBERARBEITET WERDEN
 //
-//Hochgeladene Dateien sind noch zu finden unter: ...\Workspaceordner\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\UploadServletApp\upload
+//Hochgeladene Dateien sind noch zu finden unter: 
 
 
 import java.io.File;
@@ -54,11 +52,10 @@ public class UploadServlet extends HttpServlet {
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		upload.setFileSizeMax(MAX_FILE_SIZE);
 		upload.setSizeMax(MAX_REQUEST_SIZE);
-		
-		// constructs the directory path to store upload file
-		String uploadPath = getServletContext().getRealPath("") //HIER NOCH ANPASSEN (Temporary Directory on Server)
-			+ File.separator + UPLOAD_DIRECTORY;
+		String path = System.getProperty("user.home");
+		String uploadPath = path + "\\upload\\";
 		// creates the directory if it does not exist
+		System.out.println("Pfad " + uploadPath);
 		File uploadDir = new File(uploadPath);
 		if (!uploadDir.exists()) {
 			uploadDir.mkdir();
@@ -74,7 +71,7 @@ public class UploadServlet extends HttpServlet {
 				FileItem item = (FileItem) iter.next();
 				// processes only fields that are not form fields
 				if (!item.isFormField()) {
-					String fileName = new File(item.getName()).getName();
+					String fileName = "weka.csv";
 					String filePath = uploadPath + File.separator + fileName;
 					File storeFile = new File(filePath);
 					
