@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -21,12 +23,18 @@
   
 	<div class="container" style="margin-top:250px;">
 		<img src="imgs/KaufDort.png" class="img-fluid mx-auto d-block" alt="KaufDort">
-		<form>
+		<form action="checkPassword" method="post">
 			<div class="form-group">
 				<h3 align="center" style="margin-bottom:20px">Bitte geben Sie Ihr Passwort ein<h3>
-				<input type="password" class="form-control" title="Dieses Feld muss ausgefüllt werden" placeholder="Passwort" required autofocus>
+				<% String error = "";
+					if ((String)request.getSession().getAttribute("error")!=null){
+						error = (String)request.getSession().getAttribute("error");
+					}%>
+				<%= error %>
+				<input type="password" name="password" class="form-control" title="Dieses Feld muss ausgefÃ¼llt werden" placeholder="Passwort" required autofocus>
+				<input type="submit" value="Login" />
 			</div>
-			<a href="startseite.html" class="btn btn-lg btn-primary btn-block">Login</a>
+			<a href="startseite.jsp" class="btn btn-lg btn-primary btn-block">Login</a>
 		</form>
 	</div>	
 		

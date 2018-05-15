@@ -1,7 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html lang="de">
+<% String login = (String)request.getSession().getAttribute("login");
+	if (login.equals("0")){
+		response.sendRedirect("checkPassword");
+	}%>
   <head>
-  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,7 +20,6 @@
 	
   </head>
   <body>
-	
 	<div class="jumbotron jumbotron-fluid bg-primary" style="color:white;">
 		<div class="container">
 			<h1 class="display-4">Startseite</h1>
@@ -30,34 +34,34 @@
              
 				<ul class="nav flex-column nav-pills">
 					<li class="nav-item">
-						<a class="navbar-brand text-dark" href="startseite.html"><h3>KaufDort</h3></a>
+						<a class="navbar-brand text-dark" href="startseite.jsp"><h3>KaufDort</h3></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="startseite.html">Startseite</a>
+						<a class="nav-link active" href="startseite.jsp">Startseite</a>
 					</li>
 					<li class="nav-item mt-2 px-2">
 						<strong>Top 5-Kunden</strong>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5kundenwochentag.html">nach Wochentag</a>
+						<a class="nav-link" href="top5kundenwochentag.jsp">nach Wochentag</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5kundenuhrzeit.html">nach Uhrzeit</a>
+						<a class="nav-link" href="top5kundenuhrzeit.jsp">nach Uhrzeit</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5kundenalter.html">nach Altersgruppe</a>
+						<a class="nav-link" href="top5kundenalter.jsp">nach Altersgruppe</a>
 					</li>
 					<li class="nav-item mt-2 px-2">
 						<strong>Top 5-Artikel</strong>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5artikel.html">nach Wochentag</a>
+						<a class="nav-link" href="top5artikel.jsp">nach Wochentag</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5artikel.html">nach Uhrzeit</a>
+						<a class="nav-link" href="top5artikel.jsp">nach Uhrzeit</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5artikel.html">insgesamt</a>
+						<a class="nav-link" href="top5artikel.jsp">insgesamt</a>
 					</li>
 				</ul>
 
@@ -66,24 +70,12 @@
 			<div class="col-10">
 		
 				<div class="container pb-5">
-					<!--alte Form
-					<form>
-						<div class="form-group">
-							<label>Auszuwertenden Datensatz auswählen (.csv-Datei)</label>
-							<input type="file" class="form-control-file">
-						</div>
-						<button type="button" class="btn btn-primary">Auswertung</button>
-					</form>-->
 					<form method="post" action="UploadServlet" enctype="multipart/form-data">
 						<label>Auszuwertenden Datensatz auswählen (.csv-Datei)</label> 
 						<input type="file" name="uploadFile" accept=".csv" />
-						<br/><br/> 
-						<input type="submit" value="Upload" />
+						<br/>
+						<input type="submit" value="Hochladen" />
 					</form>
-					
-					<div class="progress" style="margin-top:25px; width:400px; height:25px;">
-						<div class="progress-bar progress-bar-striped w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-					</div>
 				</div>
 				
 				<div class="container pt-3 border-top border-primary">
@@ -116,6 +108,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 	<script src="js/bootstrap.min.js"></script>
-		
+	
   </body>
 </html>

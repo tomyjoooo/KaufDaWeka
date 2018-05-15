@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" session="true"%>
+<!DOCTYPE html>
+<html lang="de">
+<% String login = (String)request.getSession().getAttribute("login");
+	if (login.equals("0")){
+		response.sendRedirect("checkPassword");
+	}%>
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -19,7 +27,7 @@
 	<div class="jumbotron jumbotron-fluid bg-primary" style="color:white;">
 		<div class="container">
 			<h1 class="display-4">Top 5-Kunden</h1>
-			<p class="lead px-2">nach Uhrzeit</p>
+			<p class="lead px-2">nach Wochentag</p>
 		</div>
 	</div>
 	
@@ -30,34 +38,34 @@
 			 
 				<ul class="nav flex-column nav-pills">
 					<li class="nav-item">
-						<a class="navbar-brand text-center" href="startseite.html"><h4>KaufDort</h4></a>
+						<a class="navbar-brand text-center" href="startseite.jsp"><h4>KaufDort</h4></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="startseite.html">Startseite</a>
+						<a class="nav-link" href="startseite.jsp">Startseite</a>
 					</li>
 					<li class="nav-item mt-2 px-2">
 						Top 5-Kunden
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5kundenwochentag.html">nach Wochentag</a>
+						<a class="nav-link active" href="top5kundenwochentag.jsp">nach Wochentag</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="top5kundenuhrzeit.html">nach Uhrzeit</a>
+						<a class="nav-link" href="top5kundenuhrzeit.jsp">nach Uhrzeit</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5kundenalter.html">nach Altersgruppe</a>
+						<a class="nav-link" href="top5kundenalter.jsp">nach Altersgruppe</a>
 					</li>
 					<li class="nav-item mt-2 px-2">
 						Top 5-Artikel
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5artikel.html">nach Wochentag</a>
+						<a class="nav-link" href="top5artikel.jsp">nach Wochentag</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5artikel.html">nach Uhrzeit</a>
+						<a class="nav-link" href="top5artikel.jsp">nach Uhrzeit</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="top5artikel.html">insgesamt</a>
+						<a class="nav-link" href="top5artikel.jsp">insgesamt</a>
 					</li>
 				</ul>
 
@@ -67,9 +75,9 @@
 		
 				<div class="container">
 					<div class="card border-primary">
-						<h3 class="card-header bg-primary" style="color:white;">Top 5-Kunden nach Uhrzeit</h3>
+						<h3 class="card-header bg-primary" style="color:white;">Top 5-Kunden nach Wochentag</h3>
 						<div class="card-body">
-							<canvas id="card3"></canvas>
+							<canvas id="card1"></canvas>
 						</div>
 					</div>
 				</div>
@@ -77,16 +85,16 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<script>
 	Chart.defaults.global.defaultFontSize = 20;
 	Chart.defaults.global.defaultFontColor = 'black';
 	Chart.defaults.global.animation.duration = 0;
-	var chart3 = document.getElementById('card3');
-	var barChart2 = new Chart(chart3, {
+	var chart1 = document.getElementById('card1');
+	var barChart1 = new Chart(chart1, {
 		type: 'bar',
 		data: {
-			labels: ["13-15 Uhr", "11-13 Uhr", "15-17 Uhr", "17-19 Uhr", "9-11 Uhr"],
+			labels: ["Samstag", "Montag", "Freitag", "Mittwoch", "Dienstag"],
 			datasets: [{
 				label: "Verkaufte Artikel",
 				backgroundColor: 'rgba(255, 150, 20)',
@@ -107,6 +115,6 @@
 		}
 	});
 	</script>
-		
+
   </body>
 </html>
